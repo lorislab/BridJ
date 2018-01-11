@@ -31,11 +31,11 @@
 		<developerConnection>scm:git:git@github.com:nativelibs4java/BridJ.git</developerConnection>
 		<url>http://github.com/nativelibs4java/BridJ</url>
 	</scm>
-	<parent>
+<!--	<parent>
 		<groupId>com.nativelibs4java</groupId>
 		<artifactId>nativelibs4java-parent</artifactId>
 		<version>1.10-SNAPSHOT</version>
-	</parent>
+	</parent>-->
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -168,6 +168,7 @@
 			<plugin>
 				<groupId>com.nativelibs4java</groupId>
 				<artifactId>maven-velocity-plugin</artifactId>
+                                <version>0.10-lorislab-1</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -446,6 +447,19 @@ BridJ is opensource software. Please refer to LICENSE.BridJ.txt to know under wh
             </execution>
           </executions>
         </plugin>
+                                        <plugin>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>2.8.2</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>2.5.3</version>
+                    <configuration>
+                        <useReleaseProfile>false</useReleaseProfile>
+                        <releaseProfiles>release</releaseProfiles>
+                        <autoVersionSubmodules>true</autoVersionSubmodules>
+                    </configuration>
+                </plugin>        
 		</plugins>
 	</build>
 	<profiles>
@@ -527,4 +541,12 @@ BridJ is opensource software. Please refer to LICENSE.BridJ.txt to know under wh
 			</build>
 		</profile>
 	</profiles>
+        
+        
+    <distributionManagement>
+        <repository>
+            <id>bintray</id>
+            <url>https://api.bintray.com/maven/lorislab/maven/bridj</url>
+        </repository>
+    </distributionManagement>        
 </project>
