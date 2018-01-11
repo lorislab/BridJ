@@ -480,7 +480,19 @@ BridJ is opensource software. Please refer to LICENSE.BridJ.txt to know under wh
                         <releaseProfiles>release</releaseProfiles>
                         <autoVersionSubmodules>true</autoVersionSubmodules>
                     </configuration>
-                </plugin>        
+                </plugin>     
+                    <plugin>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>3.0.1</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>                   
 		</plugins>
 	</build>
 	<profiles>
