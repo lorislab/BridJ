@@ -5,7 +5,7 @@
 	<artifactId>bridj</artifactId>
 	<name>BridJ (NativeLibs4Java C/C++ Interop Layer)</name>
 	<url>http://code.google.com/p/bridj/</url>
-	<version>0.7.1-SNAPSHOT</version>
+	<version>0.7.1-lorislab-1</version>
 	<packaging>bundle</packaging>
 	<repositories>
 		<repository>
@@ -30,7 +30,8 @@
 		<connection>scm:git:git@github.com:nativelibs4java/BridJ.git</connection>
 		<developerConnection>scm:git:git@github.com:nativelibs4java/BridJ.git</developerConnection>
 		<url>http://github.com/nativelibs4java/BridJ</url>
-	</scm>
+	  <tag>0.7.1-lorislab-1</tag>
+  </scm>
 <!--	<parent>
 		<groupId>com.nativelibs4java</groupId>
 		<artifactId>nativelibs4java-parent</artifactId>
@@ -350,14 +351,14 @@
 						</goals>
 						<configuration>
 							<tasks>
-								<mkdir dir="${project.build.outputDirectory}"/>
+								<mkdir dir="${project.build.outputDirectory}" />
 								<!-- TODO -->
-								<property name="compile_classpath" refid="maven.compile.classpath"/>
-								<echo message="compile classpath: ${compile_classpath}"/>
+								<property name="compile_classpath" refid="maven.compile.classpath" />
+								<echo message="compile classpath: ${compile_classpath}" />
 								<!-- http://stackoverflow.com/questions/9873152/how-to-attach-javadoc-or-sources-to-jars-in-libs-folder -->
 								<propertyfile file="${project.build.directory}/${project.build.finalName}-android.jar.properties">
-									<entry key="src" value="docs/${project.build.finalName}-sources.jar"/>
-									<entry key="doc" value="docs/${project.build.finalName}-javadoc.jar"/>
+									<entry key="src" value="docs/${project.build.finalName}-sources.jar" />
+									<entry key="doc" value="docs/${project.build.finalName}-javadoc.jar" />
 								</propertyfile>
 								<echo file="${project.build.directory}/README.Android.txt">To use BridJ in your Android project:
 - Copy libs/ to your project's root directory.
@@ -378,15 +379,15 @@ In any case, if your project is already opened in the ADT / Eclipse, close it an
 BridJ is opensource software. Please refer to LICENSE.BridJ.txt to know under which conditions you may use it.
                         </echo>
 								<zip destfile="${project.build.directory}/${project.build.finalName}-android.zip">
-									<zipfileset dir="${project.build.directory}" includes="README.Android.txt" fullpath="README.BridJ.txt"/>
-									<zipfileset dir="." includes="LICENSE" fullpath="LICENSE.BridJ.txt"/>
-									<zipfileset prefix="libs" dir="${project.build.directory}" includes="${project.build.finalName}-android.jar"/>
-									<zipfileset prefix="libs" dir="${project.build.directory}" includes="${project.build.finalName}-android.jar.properties"/>
-									<zipfileset prefix="libs/docs" dir="${project.build.directory}" includes="${project.build.finalName}-sources.jar"/>
-									<zipfileset prefix="libs/docs" dir="${project.build.directory}" includes="${project.build.finalName}-javadoc.jar"/>
-									<zipfileset prefix="native-libs" dir="src/main/android-libs" includes="*/*"/>
+									<zipfileset dir="${project.build.directory}" includes="README.Android.txt" fullpath="README.BridJ.txt" />
+									<zipfileset dir="." includes="LICENSE" fullpath="LICENSE.BridJ.txt" />
+									<zipfileset prefix="libs" dir="${project.build.directory}" includes="${project.build.finalName}-android.jar" />
+									<zipfileset prefix="libs" dir="${project.build.directory}" includes="${project.build.finalName}-android.jar.properties" />
+									<zipfileset prefix="libs/docs" dir="${project.build.directory}" includes="${project.build.finalName}-sources.jar" />
+									<zipfileset prefix="libs/docs" dir="${project.build.directory}" includes="${project.build.finalName}-javadoc.jar" />
+									<zipfileset prefix="native-libs" dir="src/main/android-libs" includes="*/*" />
 								</zip>
-								<attachartifact file="${project.build.directory}/${project.build.finalName}-android.zip"/>
+								<attachartifact file="${project.build.directory}/${project.build.finalName}-android.zip" />
 							</tasks>
 						</configuration>
 					</execution>
