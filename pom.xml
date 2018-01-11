@@ -166,11 +166,31 @@
           </systemPropertyVariables>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>com.nativelibs4java</groupId>
-				<artifactId>maven-velocity-plugin</artifactId>
-                                <version>0.10-lorislab-1</version>
-			</plugin>
+<plugin>
+					<groupId>com.nativelibs4java</groupId>
+					<artifactId>maven-velocity-plugin</artifactId>
+					<version>0.10-lorislab-1</version>
+					<executions>
+						<execution>
+							<phase>generate-sources</phase>
+							<goals>
+								<goal>generate</goal>
+							</goals>
+						</execution>
+					</executions>
+					<configuration>
+						<properties>
+							<version>${project.version}</version>
+							<project_version>${project.version}</project_version>
+							<project_name>${project.artifactId}</project_name>
+							<bridj_version>${bridj.version}</bridj_version>
+							<jnaerator_version>${jnaerator.version}</jnaerator_version>
+							<jna_version>${jna.version}</jna_version>
+							<rococoa_version>${rococoa.version}</rococoa_version>
+							<versionSpecificSubPackage>${versionSpecificSubPackage}</versionSpecificSubPackage>
+						</properties>
+					</configuration>
+				</plugin>                        
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>
