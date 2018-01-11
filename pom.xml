@@ -5,7 +5,7 @@
 	<artifactId>bridj</artifactId>
 	<name>BridJ (NativeLibs4Java C/C++ Interop Layer)</name>
 	<url>http://code.google.com/p/bridj/</url>
-	<version>0.7.1-lorislab-1</version>
+	<version>0.7.1-SNAPSHOT</version>
 	<packaging>bundle</packaging>
 	<repositories>
 		<repository>
@@ -30,7 +30,7 @@
 		<connection>scm:git:git@github.com:nativelibs4java/BridJ.git</connection>
 		<developerConnection>scm:git:git@github.com:nativelibs4java/BridJ.git</developerConnection>
 		<url>http://github.com/nativelibs4java/BridJ</url>
-	  <tag>0.7.1-lorislab-1</tag>
+	  <tag>HEAD</tag>
   </scm>
 <!--	<parent>
 		<groupId>com.nativelibs4java</groupId>
